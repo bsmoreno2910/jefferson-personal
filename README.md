@@ -137,8 +137,5 @@ Este projeto é propriedade de Jefferson Nascimento. Todos os direitos reservado
 - Imagens coletadas do Instagram oficial
 - Design inspirado nas melhores práticas de UX/UI
 - Comunidade React e Tailwind CSS
-
----
-
-Desenvolvido com ❤️ para Jefferson Personal Online
+ 
 
