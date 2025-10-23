@@ -20,20 +20,20 @@ COPY . .
 RUN pnpm build
 
 # Production stage
-FROM nginx:alpine
+FROM node:20-alpine
 
-# Copy built files from builder
-COPY --from=builder /app/dist/public /usr/share/nginx/html
+WORKDIR /app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy built files and server
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/server.js ./
+
+# Install only express
+RUN npm install express
 
 # Expose port 80
 EXPOSE 80
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://automacao_site:80/ || exit 1
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start server
+CMD ["node", "server.js"]
