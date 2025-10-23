@@ -24,16 +24,22 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy built files and server
+# Copy built files
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/server.js ./
 
-# Install only express
-RUN npm install express
+# Copy server file
+COPY server.js ./
+
+# Install only express (without package.json to avoid conflicts)
+RUN npm install --no-save express
 
 # Expose port 80
 EXPOSE 80
 
-# Start server
+# Set environment variables
+ENV PORT=80
+ENV NODE_ENV=production
+
+# Start the server
 CMD ["node", "server.js"]
+
