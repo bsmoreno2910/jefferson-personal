@@ -1,141 +1,77 @@
 # Jefferson Personal Online
 
-Site profissional para personal trainer com programas de treino personalizados, planos de assinatura e acompanhamento online.
+Site profissional para Personal Trainer Jefferson, desenvolvido com React e otimizado para deploy no EasyPanel.
 
-## 🎯 Sobre o Projeto
+## 🚀 Deploy no EasyPanel
 
-Este é um site moderno e responsivo desenvolvido para o personal trainer Jefferson Nascimento, oferecendo uma plataforma completa para divulgação de seus serviços e captação de alunos online.
+### Passo 1: Criar Repositório no GitHub
 
-## ✨ Características
+1. Crie um novo repositório no GitHub
+2. Clone este repositório
+3. Faça push dos arquivos
 
-- **Design Moderno**: Interface escura com gradientes vibrantes (laranja e amarelo)
-- **Totalmente Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
-- **Animações Suaves**: Transições e efeitos visuais profissionais
-- **SEO Otimizado**: Estrutura preparada para mecanismos de busca
-- **Performance**: Build otimizado com Vite e lazy loading de imagens
-- **Acessibilidade**: Seguindo boas práticas de WCAG 2.1
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/SEU_USUARIO/jefferson-personal.git
+git push -u origin main
+```
 
-## 🚀 Tecnologias
+### Passo 2: Configurar no EasyPanel
 
-- **React 19**: Framework JavaScript moderno
-- **TypeScript**: Tipagem estática para maior segurança
-- **Tailwind CSS 4**: Framework CSS utilitário
-- **Vite**: Build tool rápido e moderno
-- **shadcn/ui**: Componentes UI de alta qualidade
-- **Lucide Icons**: Ícones modernos e consistentes
-- **Wouter**: Roteamento leve para React
-- **Docker**: Containerização para deploy
+1. Acesse seu painel EasyPanel
+2. Clique em **"New Service"** ou **"Create"**
+3. Selecione **"Deploy from Git"**
+4. Conecte seu repositório GitHub
+5. Configure:
+   - **Build Method**: Nixpacks (automático)
+   - **Port**: 3000
+   - **Start Command**: `npm start` (já configurado no package.json)
 
-## 📁 Estrutura do Projeto
+### Passo 3: Configurar Domínio
+
+1. Vá em **"Domains"**
+2. Adicione seu domínio personalizado
+3. Configure o DNS no seu provedor de domínio
+
+## 📦 Estrutura do Projeto
 
 ```
 jefferson-personal/
-├── client/
-│   ├── public/           # Imagens e assets estáticos
-│   │   ├── jefferson_post_*.webp
-│   │   └── jefferson_profile.webp
-│   ├── src/
-│   │   ├── components/   # Componentes React
-│   │   │   ├── Header.tsx
-│   │   │   ├── Hero.tsx
-│   │   │   ├── Programs.tsx
-│   │   │   ├── Pricing.tsx
-│   │   │   ├── Testimonials.tsx
-│   │   │   ├── Contact.tsx
-│   │   │   └── Footer.tsx
-│   │   ├── pages/        # Páginas
-│   │   │   └── Home.tsx
-│   │   ├── App.tsx       # Componente principal
-│   │   └── index.css     # Estilos globais
-├── Dockerfile            # Configuração Docker
-├── nginx.conf            # Configuração Nginx
-└── DEPLOY.md            # Guia de deploy
+├── public/              # Arquivos estáticos buildados (HTML, CSS, JS, imagens)
+├── index.js             # Servidor Express
+├── package.json         # Dependências e scripts
+├── .gitignore          # Arquivos ignorados pelo Git
+└── README.md           # Este arquivo
 ```
-
-## 🎨 Paleta de Cores
-
-- **Primária**: `#FF6B35` (Laranja vibrante)
-- **Secundária**: `#1A2332` (Azul escuro)
-- **Accent**: `#FFD23F` (Amarelo)
-- **Background**: `#0F1419` (Preto azulado)
-- **Cards**: `#1E2936` (Cinza escuro)
-
-## 📦 Seções do Site
-
-1. **Hero**: Banner principal com CTA e benefícios
-2. **Programas**: 4 programas de treino detalhados
-3. **Planos**: Pricing com 2 opções (Mensal e Trimestral)
-4. **Depoimentos**: 6 depoimentos reais de alunos
-5. **Contato**: Formulário e links diretos (WhatsApp, Email, Instagram)
-6. **Footer**: Links rápidos e informações de contato
 
 ## 🛠️ Desenvolvimento Local
 
-### Pré-requisitos
-
-- Node.js 18+
-- pnpm (ou npm/yarn)
-
-### Instalação
-
 ```bash
 # Instalar dependências
-pnpm install
+npm install
 
-# Iniciar servidor de desenvolvimento
-pnpm dev
-
-# Acessar em http://localhost:3000
+# Rodar o servidor
+npm start
 ```
 
-### Build para Produção
+O site estará disponível em `http://localhost:3000`
 
-```bash
-# Criar build otimizado
-pnpm build
+## 📝 Características
 
-# Preview do build
-pnpm preview
-```
+- ✅ Design moderno e responsivo
+- ✅ Tema escuro com gradientes laranja/amarelo
+- ✅ Seções: Hero, Programas, Depoimentos, Contato
+- ✅ Integração com WhatsApp
+- ✅ Imagens otimizadas em WebP
+- ✅ Performance otimizada
 
-## 🚢 Deploy
+## 📞 Contato
 
-### EasyPanel (Recomendado)
+WhatsApp: (11) 91171-3717
 
-Siga o guia completo em [DEPLOY.md](./DEPLOY.md)
+---
 
-**Resumo:**
-1. Faça push do código para um repositório Git
-2. Conecte o repositório no EasyPanel
-3. Configure o build com Docker
-4. Deploy automático
-
-### Docker Local
-
-```bash
-# Build da imagem
-docker build -t jefferson-personal .
-
-# Executar container
-docker run -p 8080:80 jefferson-personal
-
-# Acessar em http://localhost:8080
-```
-
-## 📱 Contato
-
-- **Email**: jefersonascimento.edfisica@gmail.com
-- **Instagram**: [@jefferson_personal](https://www.instagram.com/jefferson_personal/)
-- **Site**: [jeffersonpersonal.online](https://jeffersonpersonal.online)
-
-## 📄 Licença
-
-Este projeto é propriedade de Jefferson Nascimento. Todos os direitos reservados.
-
-## 🙏 Agradecimentos
-
-- Imagens coletadas do Instagram oficial
-- Design inspirado nas melhores práticas de UX/UI
-- Comunidade React e Tailwind CSS
- 
+Desenvolvido com ❤️ para Jefferson Personal
 
