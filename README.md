@@ -73,5 +73,4 @@ WhatsApp: (11) 91171-3717
 
 ---
 
-Desenvolvido com ❤️ para Jefferson Personal
 
